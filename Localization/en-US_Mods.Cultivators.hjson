@@ -2,7 +2,7 @@
 
 Items: {
 	TestSword: {
-		DisplayName: "Test Sword"
+		DisplayName: Test Sword
 		Tooltip:
 			'''
 			Template of an item
@@ -10,4 +10,19 @@ Items: {
 			It's snowing on Mt.Fuji
 			'''
 	}
+
+	ExampleAdvancedAnimatedProjectileItem: {
+		Tooltip: ""
+		DisplayName: Example Advanced Animated Projectile Item
+	}
+
+	ExampleHomingProjectileProjectileItem: {
+		Tooltip: ""
+		DisplayName: Example Homing Projectile Projectile Item
+	}
+}
+
+Projectiles: {
+	ExampleAdvancedAnimatedProjectile.DisplayName: Example Advanced Animated Projectile
+	ExampleHomingProjectile.DisplayName: Example Homing Projectile
 }
