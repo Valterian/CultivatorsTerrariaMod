@@ -29,6 +29,7 @@ namespace Cultivators.Content.Resources.Ci
         public override void Initialize()
         {
             exampleResourceMax = DefaultExampleResourceMax;
+            exampleResourceCurrent = DefaultExampleResourceMax;
         }
 
         public override void ResetEffects()

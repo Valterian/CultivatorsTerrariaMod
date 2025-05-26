@@ -33,4 +33,7 @@ Projectiles: {
 	ExampleHomingProjectile.DisplayName: Example Homing Projectile
 }
 
-UI.ExampleResource: CI
+UI: {
+	ExampleResource: "{0}/{1}"
+	Elements.WindLightning: Wind & Lightning
+}

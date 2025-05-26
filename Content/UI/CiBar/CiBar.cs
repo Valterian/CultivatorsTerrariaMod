@@ -1,5 +1,6 @@
 ﻿using Cultivators.Content.Items.TestItems;
 using Cultivators.Content.Resources.Ci;
+using Cultivators.Utility;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -26,6 +27,9 @@ namespace Cultivators.Content.UI.CIBar
         private UIImage barFrame;
         private Color gradientA;
         private Color gradientB;
+        private Dictionary<ElementsEnum, ElementSettings> ElementsSettings;
+        private ElementsEnum SelectedElement;
+        private ElementSettings SelectedElementSettings;
 
         public override void OnInitialize()
         {
@@ -47,23 +51,18 @@ namespace Cultivators.Content.UI.CIBar
             text.Width.Set(138, 0f);
             text.Height.Set(34, 0f);
             text.Top.Set(10, 0f);
-            text.Left.Set(-60, 0f);
+            text.Left.Set(-70, 0f);
 
-            gradientA = new Color(123, 25, 138); // A dark purple
-            gradientB = new Color(187, 91, 201); // A light purple
+            InitElementsUiConfig();
+
+            SelectedElement = ElementsEnum.WindLightning;
+            SelectedElementSettings = ElementsSettings[SelectedElement];
+            gradientA = SelectedElementSettings.CiBarGradientA;
+            gradientB = SelectedElementSettings.CiBarGradientB;
 
             area.Append(text);
             area.Append(barFrame);
             Append(area);
-        }
-
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            // This prevents drawing unless we are using an ExampleCustomResourceWeapon
-            if (Main.LocalPlayer.HeldItem.ModItem is not ExampleCustomResourceWeapon)
-                return;
-
-            base.Draw(spriteBatch);
         }
 
         // Here we draw our UI
@@ -97,13 +96,107 @@ namespace Cultivators.Content.UI.CIBar
 
         public override void Update(GameTime gameTime)
         {
-            if (Main.LocalPlayer.HeldItem.ModItem is not ExampleCustomResourceWeapon)
-                return;
-
             var modPlayer = Main.LocalPlayer.GetModPlayer<CiResourcePlayer>();
             // Setting the text per tick to update and show our resource values.
             text.SetText(ExampleResourceUISystem.ExampleResourceText.Format(modPlayer.exampleResourceCurrent, modPlayer.exampleResourceMax2));
             base.Update(gameTime);
+        }
+
+        private void InitElementsUiConfig()
+        {
+            ElementsSettings = new Dictionary<ElementsEnum, ElementSettings>
+            {
+                {
+                    ElementsEnum.None,
+                    new ElementSettings
+                    {
+                        ElementDescription = Language.GetOrRegister($"UI.Elements.None").Value,
+                        CiBarGradientA = new Color(0, 0, 0), // A dark gray
+                        CiBarGradientB = new Color(0, 0, 0), // A light gray
+                        TextColor = new Color(0, 0, 0), // A light gray
+                    }
+                },
+                {
+                    ElementsEnum.WindLightning,
+                    new ElementSettings
+                    {
+                        ElementDescription = Language.GetOrRegister($"UI.Elements.WindLightning").Value,
+                        CiBarGradientA = new Color(179, 185, 199), // A dark gray
+                        CiBarGradientB = new Color(91, 102, 120), // A light gray
+                        TextColor = new Color(91, 102, 120), // A light gray
+                    }
+                },
+                {
+                    ElementsEnum.Fire,
+                    new ElementSettings
+                    {
+                        ElementDescription = Language.GetOrRegister($"UI.Elements.Fire").Value,
+                        CiBarGradientA = new Color(252, 95, 4), // A dark yellow
+                        CiBarGradientB = new Color(255, 255, 204), // A light yellow
+                        TextColor = new Color(255, 255, 204), // A light yellow
+                    }
+                },
+                {
+                    ElementsEnum.WaterIce,
+                    new ElementSettings
+                    {
+                        ElementDescription = Language.GetOrRegister($"UI.Elements.WaterIce").Value,
+                        CiBarGradientA = new Color(17, 30, 113), // A dark blue
+                        CiBarGradientB = new Color(28, 50, 189), // A light blue
+                        TextColor = new Color(28, 50, 189), // A light blue
+                    }
+                },
+                {
+                    ElementsEnum.EarthNature,
+                    new ElementSettings
+                    {
+                        ElementDescription = Language.GetOrRegister($"UI.Elements.EarthNature").Value,
+                        CiBarGradientA = new Color(56, 87, 27), // A dark green
+                        CiBarGradientB = new Color(105, 163, 50), // A light green
+                        TextColor = new Color(105, 163, 50), // A light green
+                    }
+                },
+                {
+                    ElementsEnum.Death,
+                    new ElementSettings
+                    {
+                        ElementDescription = Language.GetOrRegister($"UI.Elements.Death").Value,
+                        CiBarGradientA = new Color(37, 62, 59), // A dark green
+                        CiBarGradientB = new Color(169, 236, 203), // A light green
+                        TextColor = new Color(169, 236, 203), // A light green
+                    }
+                },
+                {
+                    ElementsEnum.Blood,
+                    new ElementSettings
+                    {
+                        ElementDescription = Language.GetOrRegister($"UI.Elements.Blood").Value,
+                        CiBarGradientA = new Color(55, 23, 23), // A dark red
+                        CiBarGradientB = new Color(241, 0, 0), // A light red
+                        TextColor = new Color(241, 0, 0), // A light red
+                    }
+                },
+                {
+                    ElementsEnum.Darkness,
+                    new ElementSettings
+                    {
+                        ElementDescription = Language.GetOrRegister($"UI.Elements.Darkness").Value,
+                        CiBarGradientA = new Color(98, 24, 184), // A dark purple
+                        CiBarGradientB = new Color(230, 165, 233), // A light purple
+                        TextColor = new Color(230, 165, 233), // A light purple
+                    }
+                },
+                {
+                    ElementsEnum.Light,
+                    new ElementSettings
+                    {
+                        ElementDescription = Language.GetOrRegister($"UI.Elements.Light").Value,
+                        CiBarGradientA = new Color(149, 149, 149), // A dark purple
+                        CiBarGradientB = new Color(245, 245, 245), // A light purple
+                        TextColor = new Color(245, 245, 245), // A light purple
+                    }
+                }
+            };
         }
     }
 
@@ -139,7 +232,8 @@ namespace Cultivators.Content.UI.CIBar
             {
                 layers.Insert(resourceBarIndex, new LegacyGameInterfaceLayer(
                     "ExampleMod: Example Resource Bar",
-                    delegate {
+                    delegate
+                    {
                         ExampleResourceBarUserInterface.Draw(Main.spriteBatch, new GameTime());
                         return true;
                     },

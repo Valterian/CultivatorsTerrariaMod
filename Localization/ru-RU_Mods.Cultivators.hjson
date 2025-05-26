@@ -1,4 +1,4 @@
-﻿# This file will automatically update with entries for new content after a build and reload.
+# This file will automatically update with entries for new content after a build and reload.
 
 Items: {
 	TestSword: {
@@ -33,4 +33,7 @@ Projectiles: {
 	ExampleHomingProjectile.DisplayName: Example Homing Projectile
 }
 
-UI.ExampleResource: ЦИ
+UI: {
+	ExampleResource: "{0}/{1}"
+	Elements.WindLightning: Ветер и Молния
+}
