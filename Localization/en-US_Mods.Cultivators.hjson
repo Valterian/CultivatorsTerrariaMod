@@ -20,9 +20,17 @@ Items: {
 		Tooltip: ""
 		DisplayName: Example Homing Projectile Projectile Item
 	}
+
+	ExampleCustomResourceWeapon: {
+		UsesXExampleResource: Mods.Cultivators.Items.ExampleCustomResourceWeapon.UsesXExampleResource
+		DisplayName: Example Custom Resource Weapon
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
 	ExampleAdvancedAnimatedProjectile.DisplayName: Example Advanced Animated Projectile
 	ExampleHomingProjectile.DisplayName: Example Homing Projectile
 }
+
+UI.ExampleResource: CI
