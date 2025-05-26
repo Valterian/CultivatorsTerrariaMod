@@ -26,6 +26,19 @@ Items: {
 		DisplayName: Example Custom Resource Weapon
 		Tooltip: ""
 	}
+
+	BaseCiWeapon: {
+		UsesXCiResource: Использует {0} ед. ци
+		// DisplayName: Base Ci Weapon
+		// Tooltip: ""
+		RequiredCiType: Требует ци {0} для использования
+	}
+
+	BookOfArrowOfDeath: {
+		//UsesXCiResource: Mods.Cultivators.Items.BookOfArrowOfDeath.UsesXCiResource
+		DisplayName: Том 'стрелы смерти'
+		Tooltip: Созданная в темные времена техника управления стрелой смерти
+	}
 }
 
 Projectiles: {
@@ -36,4 +49,18 @@ Projectiles: {
 UI: {
 	ExampleResource: "{0}/{1}"
 	Elements.WindLightning: Ветер и Молния
+}
+
+Configs: {
+	ElementsConfig: {
+		// DisplayName: Elements Config
+		Light: света
+		Darkness: тьмы
+		Blood: крови
+		Death: смерти
+		EarthNature: земли/природы
+		WaterIce: воды/льда
+		Fire: огня
+		WindLightning: ветра/молнии
+	}
 }

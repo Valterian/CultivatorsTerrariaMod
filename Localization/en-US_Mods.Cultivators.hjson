@@ -26,6 +26,19 @@ Items: {
 		DisplayName: Example Custom Resource Weapon
 		Tooltip: ""
 	}
+
+	BaseCiWeapon: {
+		UsesXCiResource: Uses {0} CI
+		DisplayName: Base Ci Weapon
+		Tooltip: ""
+		RequiredCiType: Require {0} CI energy to be used
+	}
+
+	BookOfArrowOfDeath: {
+		//UsesXCiResource: Mods.Cultivators.Items.BookOfArrowOfDeath.UsesXCiResource
+		DisplayName: Book Of Arrow Of Death
+		Tooltip: Created in the ancient times technic to control arrow of death
+	}
 }
 
 Projectiles: {
@@ -36,4 +49,18 @@ Projectiles: {
 UI: {
 	ExampleResource: "{0}/{1}"
 	Elements.WindLightning: Wind & Lightning
+}
+
+Configs: {
+	ElementsConfig: {
+		DisplayName: Elements Config
+		Light: light
+		Darkness: darkness
+		Blood: blood
+		Death: death
+		EarthNature: earth/nature
+		WaterIce: water/ice
+		Fire: fire
+		WindLightning: wind/lightning
+	}
 }
