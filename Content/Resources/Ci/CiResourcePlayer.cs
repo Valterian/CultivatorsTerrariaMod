@@ -85,17 +85,17 @@ namespace Cultivators.Content.Resources.Ci
         }
 
         // HealExampleResource will increase the actual ExampleResource stat, then HealExampleResourceEffect spawns a CombatText visual and SendExampleResourceEffectMessage/HandleExampleResourceEffectMessage handle syncing that visual to other players.
-        public void HealExampleResource(int healAmount)
+        public void HealCiResource(int healAmount)
         {
             exampleResourceCurrent = Math.Clamp(exampleResourceCurrent + healAmount, 0, exampleResourceMax2);
             if (Main.myPlayer == Player.whoAmI)
             {
-                HealExampleResourceEffect(healAmount);
+                HealCiResourceEffect(healAmount);
             }
         }
 
         // Responsible for spawning and syncing just the CombatText
-        public void HealExampleResourceEffect(int healAmount)
+        public void HealCiResourceEffect(int healAmount)
         {
             CombatText.NewText(Player.getRect(), HealExampleResourceColor, healAmount);
             if (Main.netMode == NetmodeID.MultiplayerClient && Player.whoAmI == Main.myPlayer)
@@ -116,7 +116,7 @@ namespace Cultivators.Content.Resources.Ci
             int healAmount = reader.ReadInt32();
             if (player != Main.myPlayer)
             {
-                Main.player[player].GetModPlayer<CiResourcePlayer>().HealExampleResourceEffect(healAmount);
+                Main.player[player].GetModPlayer<CiResourcePlayer>().HealCiResourceEffect(healAmount);
             }
 
             if (Main.netMode == NetmodeID.Server)

@@ -1,4 +1,4 @@
-# This file will automatically update with entries for new content after a build and reload.
+﻿# This file will automatically update with entries for new content after a build and reload.
 
 Items: {
 	TestSword: {
@@ -22,7 +22,7 @@ Items: {
 	}
 
 	ExampleCustomResourceWeapon: {
-		UsesXExampleResource: Uses {0} CI
+		UsesXExampleResource: Использует {0} ед. ци
 		DisplayName: Example Custom Resource Weapon
 		Tooltip: ""
 	}
@@ -33,4 +33,4 @@ Projectiles: {
 	ExampleHomingProjectile.DisplayName: Example Homing Projectile
 }
 
-UI.ExampleResource: CI
+UI.ExampleResource: ЦИ

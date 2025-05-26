@@ -46,8 +46,8 @@ namespace Cultivators.Content.UI.CIBar
             text = new UIText("0/0", 0.8f); // text to show stat
             text.Width.Set(138, 0f);
             text.Height.Set(34, 0f);
-            text.Top.Set(40, 0f);
-            text.Left.Set(0, 0f);
+            text.Top.Set(10, 0f);
+            text.Left.Set(-60, 0f);
 
             gradientA = new Color(123, 25, 138); // A dark purple
             gradientB = new Color(187, 91, 201); // A light purple
