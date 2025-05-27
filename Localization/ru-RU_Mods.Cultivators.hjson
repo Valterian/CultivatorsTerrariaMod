@@ -39,11 +39,17 @@ Items: {
 		DisplayName: Том 'стрелы смерти'
 		Tooltip: Созданная в темные времена техника управления стрелой смерти
 	}
+
+	GelWhip: {
+		// DisplayName: Gel Whip
+		// Tooltip: ""
+	}
 }
 
 Projectiles: {
 	ExampleAdvancedAnimatedProjectile.DisplayName: Example Advanced Animated Projectile
 	ExampleHomingProjectile.DisplayName: Example Homing Projectile
+	// GelWhipProjectile.DisplayName: Gel Whip Projectile
 }
 
 UI: {
