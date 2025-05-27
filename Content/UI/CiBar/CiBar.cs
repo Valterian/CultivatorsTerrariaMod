@@ -55,7 +55,7 @@ namespace Cultivators.Content.UI.CIBar
 
             InitElementsUiConfig();
 
-            SelectedElement = ElementsEnum.WindLightning;
+            SelectedElement = ElementsEnum.Wind;
             SelectedElementSettings = ElementsSettings[SelectedElement];
             gradientA = SelectedElementSettings.CiBarGradientA;
             gradientB = SelectedElementSettings.CiBarGradientB;
@@ -117,7 +117,7 @@ namespace Cultivators.Content.UI.CIBar
                     }
                 },
                 {
-                    ElementsEnum.WindLightning,
+                    ElementsEnum.Wind,
                     new ElementSettings
                     {
                         ElementDescription = Language.GetOrRegister($"UI.Elements.WindLightning").Value,
@@ -127,7 +127,7 @@ namespace Cultivators.Content.UI.CIBar
                     }
                 },
                 {
-                    ElementsEnum.Fire,
+                    ElementsEnum.FireLightning,
                     new ElementSettings
                     {
                         ElementDescription = Language.GetOrRegister($"UI.Elements.Fire").Value,

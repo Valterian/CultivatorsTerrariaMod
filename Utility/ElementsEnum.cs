@@ -9,8 +9,8 @@ namespace Cultivators.Utility
     public enum ElementsEnum
     {
         None,
-        WindLightning,
-        Fire,
+        Wind,
+        FireLightning,
         WaterIce,
         EarthNature,
         Death,

@@ -7,7 +7,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Cultivators.Content.NPC
+namespace Cultivators.Content.CiNPC
 {
     internal class MoHax : ModNPC
     {
