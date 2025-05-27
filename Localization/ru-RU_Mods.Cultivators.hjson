@@ -27,40 +27,19 @@ Items: {
 		Tooltip: ""
 	}
 
-	BaseCiWeapon: {
-		UsesXCiResource: Использует {0} ед. ци
-		// DisplayName: Base Ci Weapon
+	GelWhip: {
+		// DisplayName: Gel Whip
 		// Tooltip: ""
-		RequiredCiType: Требует ци {0} для использования
-	}
-
-	BookOfArrowOfDeath: {
-		//UsesXCiResource: Mods.Cultivators.Items.BookOfArrowOfDeath.UsesXCiResource
-		DisplayName: Том 'стрелы смерти'
-		Tooltip: Созданная в темные времена техника управления стрелой смерти
 	}
 }
 
 Projectiles: {
 	ExampleAdvancedAnimatedProjectile.DisplayName: Example Advanced Animated Projectile
 	ExampleHomingProjectile.DisplayName: Example Homing Projectile
+	// GelWhipProjectile.DisplayName: Gel Whip Projectile
 }
 
 UI: {
 	ExampleResource: "{0}/{1}"
 	Elements.WindLightning: Ветер и Молния
-}
-
-Configs: {
-	ElementsConfig: {
-		// DisplayName: Elements Config
-		Light: света
-		Darkness: тьмы
-		Blood: крови
-		Death: смерти
-		EarthNature: земли/природы
-		WaterIce: воды/льда
-		Fire: огня
-		WindLightning: ветра/молнии
-	}
 }

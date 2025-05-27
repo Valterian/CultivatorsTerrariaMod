@@ -1,5 +1,4 @@
-﻿using Cultivators.Utility;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using System;
 using System.IO;
 using Terraria;
@@ -21,7 +20,7 @@ namespace Cultivators.Content.Resources.Ci
         public bool exampleResourceMagnet = false;
         public static readonly int exampleResourceMagnetGrabRange = 300;
         public static readonly Color HealExampleResourceColor = new(187, 91, 201); // The color to use with CombatText when replenishing exampleResourceCurrent
-        public ElementsEnum SelectedCiElement;
+
         // In order to make the Example Resource example straightforward, several things have been left out that would be needed for a fully functional resource similar to mana and health. 
         // Here are additional things you might need to implement if you intend to make a custom resource:
         // - Multiplayer Syncing: The current example doesn't require MP code, but pretty much any additional functionality will require this. ModPlayer.SendClientChanges and CopyClientState will be necessary, as well as SyncPlayer if you allow the user to increase exampleResourceMax.
@@ -29,7 +28,6 @@ namespace Cultivators.Content.Resources.Ci
 
         public override void Initialize()
         {
-            SelectedCiElement = ElementsEnum.Death;
             exampleResourceMax = DefaultExampleResourceMax;
             exampleResourceCurrent = DefaultExampleResourceMax;
         }

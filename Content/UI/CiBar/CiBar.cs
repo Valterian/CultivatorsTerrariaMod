@@ -30,7 +30,6 @@ namespace Cultivators.Content.UI.CIBar
         private Dictionary<ElementsEnum, ElementSettings> ElementsSettings;
         private ElementsEnum SelectedElement;
         private ElementSettings SelectedElementSettings;
-        private CiResourcePlayer LocalPlayer;
 
         public override void OnInitialize()
         {
@@ -56,7 +55,7 @@ namespace Cultivators.Content.UI.CIBar
 
             InitElementsUiConfig();
 
-            SelectedElement = ElementsEnum.None;
+            SelectedElement = ElementsEnum.WindLightning;
             SelectedElementSettings = ElementsSettings[SelectedElement];
             gradientA = SelectedElementSettings.CiBarGradientA;
             gradientB = SelectedElementSettings.CiBarGradientB;
@@ -97,13 +96,9 @@ namespace Cultivators.Content.UI.CIBar
 
         public override void Update(GameTime gameTime)
         {
-            LocalPlayer = Main.LocalPlayer.GetModPlayer<CiResourcePlayer>();
-            SelectedElement = LocalPlayer.SelectedCiElement;
-            SelectedElementSettings = ElementsSettings[SelectedElement];
-            gradientA = SelectedElementSettings.CiBarGradientA;
-            gradientB = SelectedElementSettings.CiBarGradientB;
+            var modPlayer = Main.LocalPlayer.GetModPlayer<CiResourcePlayer>();
             // Setting the text per tick to update and show our resource values.
-            text.SetText(ExampleResourceUISystem.ExampleResourceText.Format(LocalPlayer.exampleResourceCurrent, LocalPlayer.exampleResourceMax2));
+            text.SetText(ExampleResourceUISystem.ExampleResourceText.Format(modPlayer.exampleResourceCurrent, modPlayer.exampleResourceMax2));
             base.Update(gameTime);
         }
 
