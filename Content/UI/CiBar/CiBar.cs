@@ -122,7 +122,7 @@ namespace Cultivators.Content.UI.CIBar
                     }
                 },
                 {
-                    ElementsEnum.WindLightning,
+                    ElementsEnum.Wind,
                     new ElementSettings
                     {
                         ElementDescription = Language.GetOrRegister($"UI.Elements.WindLightning").Value,
@@ -132,7 +132,7 @@ namespace Cultivators.Content.UI.CIBar
                     }
                 },
                 {
-                    ElementsEnum.Fire,
+                    ElementsEnum.FireLightning,
                     new ElementSettings
                     {
                         ElementDescription = Language.GetOrRegister($"UI.Elements.Fire").Value,
