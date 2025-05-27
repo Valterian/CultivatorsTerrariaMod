@@ -37,7 +37,7 @@ namespace Cultivators.Content.Items.ElementalWeapons
             tooltips.Add(new TooltipLine(Mod, "UsesXCiResource", UsesXCiResourceText.Format(CiCost)));
             var elementTooltipText = Language.GetOrRegister($"Mods.Cultivators.Configs.ElementsConfig.{ItemElement.ToString()}");
             var elementTooltipLine = new TooltipLine(Mod, "RequiredCiType", RequiredCiTypeText.Format(elementTooltipText));
-            elementTooltipLine.OverrideColor = new Color(37, 62, 59);
+            elementTooltipLine.OverrideColor = GetTooltipElementColor();
             tooltips.Add(elementTooltipLine);
         }
 
@@ -55,6 +55,33 @@ namespace Cultivators.Content.Items.ElementalWeapons
             var exampleResourcePlayer = player.GetModPlayer<CiResourcePlayer>();
             exampleResourcePlayer.exampleResourceCurrent -= CiCost;
             return true;
+        }
+
+        private Color GetTooltipElementColor()
+        {
+            switch (ItemElement)
+            {
+                case ElementsEnum.None:
+                    return new Color(255,255,255);
+                case ElementsEnum.WindLightning:
+                    return new Color(179, 185, 199);
+                case ElementsEnum.Fire:
+                    return new Color(252, 95, 4);
+                case ElementsEnum.WaterIce:
+                    return new Color(17, 30, 113);
+                case ElementsEnum.EarthNature:
+                    return new Color(56, 87, 27);
+                case ElementsEnum.Death:
+                    return new Color(169, 236, 203);
+                case ElementsEnum.Blood:
+                    return new Color(55, 23, 23);
+                case ElementsEnum.Darkness:
+                    return new Color(98, 24, 184);
+                case ElementsEnum.Light:
+                    return new Color(149, 149, 149);
+                default:
+                    return new Color(255, 255, 255);
+            }
         }
     }
 }
