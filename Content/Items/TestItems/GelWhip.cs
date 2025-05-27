@@ -2,7 +2,6 @@
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Cultivators.Content.Projectiles;
 
 namespace Cultivators.Content.Items.TestItems
 {

@@ -6,7 +6,7 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Cultivators.Content.Projectiles
+namespace Cultivators.Content.Items.TestItems
 {
     internal class GelWhipProjectile : ModProjectile
     {
