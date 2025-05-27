@@ -11,8 +11,8 @@ namespace Cultivators.Utility
 {
     public class ElementsConfig : ModConfig
     {
-        public static LocalizedText WindLightningText { get; private set; }
-        public static LocalizedText FireText { get; private set; }
+        public static LocalizedText WindText { get; private set; }
+        public static LocalizedText FireLightningText { get; private set; }
         public static LocalizedText WaterIceText { get; private set; }
         public static LocalizedText EarthNatureText { get; private set; }
         public static LocalizedText DeathText { get; private set; }
@@ -25,8 +25,8 @@ namespace Cultivators.Utility
         public override void OnLoaded()
         {
             base.OnLoaded();
-            WindLightningText = this.GetLocalization("WindLightning");
-            FireText = this.GetLocalization("Fire");
+            WindText = this.GetLocalization("Wind");
+            FireLightningText = this.GetLocalization("FireLightning");
             WaterIceText = this.GetLocalization("WaterIce");
             EarthNatureText = this.GetLocalization("EarthNature");
             DeathText = this.GetLocalization("Death");

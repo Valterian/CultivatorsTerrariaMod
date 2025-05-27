@@ -60,7 +60,7 @@ Configs: {
 		Death: смерти
 		EarthNature: земли/природы
 		WaterIce: воды/льда
-		Fire: огня
-		WindLightning: ветра/молнии
+		FireLightning: огня/молнии
+		Wind: ветра
 	}
 }

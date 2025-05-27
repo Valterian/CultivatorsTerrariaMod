@@ -60,7 +60,7 @@ Configs: {
 		Death: death
 		EarthNature: earth/nature
 		WaterIce: water/ice
-		Fire: fire
-		WindLightning: wind/lightning
+		FireLightning: fire/lightning
+		Wind: wind
 	}
 }
