@@ -30,6 +30,7 @@ namespace Cultivators.Content.UI.CIBar
         private Dictionary<ElementsEnum, ElementSettings> ElementsSettings;
         private ElementsEnum SelectedElement;
         private ElementSettings SelectedElementSettings;
+        private CiResourcePlayer LocalPlayer;
 
         public override void OnInitialize()
         {
@@ -55,7 +56,7 @@ namespace Cultivators.Content.UI.CIBar
 
             InitElementsUiConfig();
 
-            SelectedElement = ElementsEnum.Wind;
+            SelectedElement = ElementsEnum.None;
             SelectedElementSettings = ElementsSettings[SelectedElement];
             gradientA = SelectedElementSettings.CiBarGradientA;
             gradientB = SelectedElementSettings.CiBarGradientB;
@@ -96,9 +97,13 @@ namespace Cultivators.Content.UI.CIBar
 
         public override void Update(GameTime gameTime)
         {
-            var modPlayer = Main.LocalPlayer.GetModPlayer<CiResourcePlayer>();
+            LocalPlayer = Main.LocalPlayer.GetModPlayer<CiResourcePlayer>();
+            SelectedElement = LocalPlayer.SelectedCiElement;
+            SelectedElementSettings = ElementsSettings[SelectedElement];
+            gradientA = SelectedElementSettings.CiBarGradientA;
+            gradientB = SelectedElementSettings.CiBarGradientB;
             // Setting the text per tick to update and show our resource values.
-            text.SetText(ExampleResourceUISystem.ExampleResourceText.Format(modPlayer.exampleResourceCurrent, modPlayer.exampleResourceMax2));
+            text.SetText(ExampleResourceUISystem.ExampleResourceText.Format(LocalPlayer.exampleResourceCurrent, LocalPlayer.exampleResourceMax2));
             base.Update(gameTime);
         }
 
@@ -117,7 +122,7 @@ namespace Cultivators.Content.UI.CIBar
                     }
                 },
                 {
-                    ElementsEnum.Wind,
+                    ElementsEnum.WindLightning,
                     new ElementSettings
                     {
                         ElementDescription = Language.GetOrRegister($"UI.Elements.WindLightning").Value,
@@ -127,7 +132,7 @@ namespace Cultivators.Content.UI.CIBar
                     }
                 },
                 {
-                    ElementsEnum.FireLightning,
+                    ElementsEnum.Fire,
                     new ElementSettings
                     {
                         ElementDescription = Language.GetOrRegister($"UI.Elements.Fire").Value,

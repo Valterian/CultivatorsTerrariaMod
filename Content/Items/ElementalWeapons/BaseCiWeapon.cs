@@ -63,9 +63,9 @@ namespace Cultivators.Content.Items.ElementalWeapons
             {
                 case ElementsEnum.None:
                     return new Color(255,255,255);
-                case ElementsEnum.WindLightning:
+                case ElementsEnum.Wind:
                     return new Color(179, 185, 199);
-                case ElementsEnum.Fire:
+                case ElementsEnum.FireLightning:
                     return new Color(252, 95, 4);
                 case ElementsEnum.WaterIce:
                     return new Color(17, 30, 113);

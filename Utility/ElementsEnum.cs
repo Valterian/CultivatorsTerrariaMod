@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +10,8 @@ namespace Cultivators.Utility
     public enum ElementsEnum
     {
         None,
-        Wind,
-        FireLightning,
+        WindLightning,
+        Fire,
         WaterIce,
         EarthNature,
         Death,
